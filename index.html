@@ -1,0 +1,58 @@
+<html>
+<head>
+	<!-- github: https://github.com/marijnh/CodeMirror -->
+
+	<!-- Directory List -->
+<script type="text/javascript" src="DirectoryList/script.js"></script> 
+
+	
+	<!-- -->
+	<!-- -->
+	<style type="text/css">
+	img{
+		padding: 4px;
+		float: left;
+	}
+	p{
+		padding: 0px;
+		padding-top: 7px;
+		margin: 0px;
+	}
+	#container{
+		overflow:scroll;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+		width: 240px;
+		height: 100%;
+		background-color: #2a2a2a;
+	}
+	.dir, .file{
+		margin: 0px;
+		padding: 0px;
+		background-color: #3a3a3a;
+		height: 30px;
+		width: 100%;
+	}
+	.file{
+		background-color: #4a4a4a;
+	}
+	</style>
+</head>
+<body>
+	<div id="topbar"></div>
+	<div id="fileEditor">
+		<div id="container">
+			<div class="dir">
+				<img src="images/folder.png">
+				<p> Directory </p>
+			</div>
+			<div class="file">
+				<img src="images/file.png">
+				<p> File </p>
+			</div>
+		</div>
+	</div>
+	<div id="sourceEditor"></div> 
+</body>
+</html>
