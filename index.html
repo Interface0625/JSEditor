@@ -7,90 +7,18 @@
 	<link rel="stylesheet" href="js/jstree-master/dist/themes/default/style.css" />
 	<script src="js/jstree-master/dist/libs/jquery.js"></script>
 	<script src="js/jstree-master/dist/jstree.min.js"></script>
-	<script>
-
-	</script>
-
 
 
 	<script type="text/javascript" src="js/CodeMirror-master/lib/codemirror.js"></script>
 	<script type="text/javascript" src="js/CodeMirror-master/mode/javascript/javascript.js"></script>
-	<script type="text/javascript">
-		function initCodeMirror(){
-
-		}
-	</script>
+	<script type="text/javascript">	</script>
 	<!-- Directory List -->
 	<script type="text/javascript" src="js/script.js"></script> 
 
-	<script type="text/javascript">
-	function xhrGet(reqUri, callback) {
-	    var xhr = new XMLHttpRequest();
-	    xhr.open("GET", reqUri, true);
-	    xhr.onload = callback;
-	    xhr.send();
-	}
-	function openCode(url){
-			console.log("fetching gile" + url);
-
-		if(!url) return;
-		xhrGet(url, function(){
-			cm.doc.setValue(this.responseText);
-		})
-	}
-
-
-
-	var init = function(){
-		console.log("hej");
-		var treeData = [];
-		$(function() {
-	  		$('#container').jstree({ 'core' : {
-	  		 	"data" : function(o, cb){
-	  		 		var self = this;
-	  		 		xhrGet("data/folder_list.json", function(){
-	  		 			treeData = JSON.parse(this.responseText)
-	  		 			cb.call(
-	  		 				self, 
-	  		 				treeData
-              			);
-	  		 		});
-	  			}
-	  		} });
-
-
-
-	  		///
-			$('#container')
-			  // listen for event
-			  .on('changed.jstree', function (e, data) {
-			   	//1console.log(data);
-			   	//1console.log(e);
-			   	for(var i = 0; i < treeData.length; i++){
-			   		var id = data.selected[0];
-			   		if(treeData[i]["id"] === id){
-			   			var url = treeData[i]["url"];
-			   				console.log(treeData[i]["url"])
-			   			openCode(url);
-			   		}
-			   	}
-			  })
-		});
-		//
-		cm = CodeMirror.fromTextArea(
-			document.getElementById("code"), {
-        		lineNumbers: true,
-        		mode: "javascript",
-        		theme: "mbo"
-    	});
-	}
-	</script>
 	<!-- -->
 	<!-- -->
 	<link rel="stylesheet" href="res/css/style.css">
-	<style type="text/css">
-	
-	</style>
+
 </head>
 <body onload="init();">
 	<div id="topbar"></div>
