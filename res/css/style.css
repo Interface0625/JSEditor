@@ -1,0 +1,79 @@
+body{
+margin: 0px;
+padding: 0px;
+}
+.CodeMirror{
+height: 100%;
+}
+#topbar{
+margin: 0px;
+padding: 0px;
+width: 100%;
+height: 64px;
+background-color: #1c1c1c;		
+}
+.fileIcon{
+padding: 4px;
+float: left;
+width: 24px;
+height: 24px;
+}
+.fileName{
+padding: 0px;
+padding-top: 8px;
+margin: 0px;
+}
+#fileContainer{
+float: left;
+overflow:scroll;
+margin: 0px;
+padding: 0px;
+display: block;
+width: 240px;
+height: 100%;
+background-color: #2a2a2a;
+}
+.dir, .file{
+clear: both;
+margin: 0px;
+padding: 0px;
+background-color: #3a3a3a;
+color: #dadada;
+height: 32px;
+width: 100%;
+}
+.file{
+background-color: #4a4a4a;
+}
+#sourceEditor{
+background-color: #2a2a2a;
+margin: 0px;
+padding: 0px;
+width: 100%;
+height: 100%;
+}
+#container{
+color: #FFF;
+
+}
+.jstree-default-responsive .jstree-wholerow-hovered {
+background: #555;
+}
+.jstree-default .jstree-hovered {
+background-color: #555;
+}
+.jstree-default.jstree-checkbox-no-clicked .jstree-clicked.jstree-hovered {
+background: #555;
+}
+.jstree-default.jstree-checkbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked.jstree-wholerow-hovered {
+background: #555;
+}
+.jstree-default .jstree-wholerow-hovered {
+background: #555;
+}
+.jstree-default-responsive .jstree-wholerow-clicked {
+background: #666;
+}
+.jstree-default .jstree-clicked {
+background: #666;
+}
