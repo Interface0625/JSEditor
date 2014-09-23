@@ -24,9 +24,28 @@ var View = {
 	}
 };
 
+
+makeFileDiv = function(path){
+	var div = document.createElement("div");
+	div.class = "file";
+	
+	var img = document.createElement("img");
+	img.src = "images/file.png";
+	img.class = "fileIcon";
+	
+	var p = document.createElement("p");
+	p.innerText = "path";
+
+	var container = document.getElementById("fileContainer");
+
+	div.appendChild(img);
+	div.appendChild(p);
+	container.appendChild(div);
+}
+
 // Tests
-test = DirectoryList
-test.ls("/ls?/", function(args){
+//test = DirectoryList
+/*test.ls("/ls?/", function(args){
 	console.log(args);
 	View.makeList(JSON.parse(args));
-});
+});*/

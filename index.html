@@ -1,24 +1,54 @@
 <html>
 <head>
 	<!-- github: https://github.com/marijnh/CodeMirror -->
-
+	<link rel="stylesheet" href="CodeMirror-master/lib/codemirror.css">
+	<link rel="stylesheet" href="CodeMirror-master/theme/mbo.css">
+	
+	<script type="text/javascript" src="CodeMirror-master/lib/codemirror.js"></script>
+	<script type="text/javascript" src="CodeMirror-master/mode/javascript/javascript.js"></script>
+	<script type="text/javascript">
+		function initCodeMirror(){
+			cm = CodeMirror.fromTextArea(document.getElementById("code"), {
+	        	lineNumbers: true,
+	        	mode: "javascript",
+	        	theme: "mbo"
+	    	});
+		}
+	</script>
 	<!-- Directory List -->
-<script type="text/javascript" src="DirectoryList/script.js"></script> 
+	<script type="text/javascript" src="DirectoryList/script.js"></script> 
 
 	
 	<!-- -->
 	<!-- -->
 	<style type="text/css">
-	img{
+	body{
+		margin: 0px;
+		padding: 0px;
+	}
+	.CodeMirror{
+		height: 100%;
+	}
+	#topbar{
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 64px;
+		background-color: #1c1c1c;		
+	}
+	.fileIcon{
 		padding: 4px;
 		float: left;
+		width: 24px;
+		height: 24px;
 	}
-	p{
+	.fileName{
 		padding: 0px;
-		padding-top: 7px;
+		padding-top: 8px;
 		margin: 0px;
 	}
-	#container{
+	#fileContainer{
+		float: left;
 		overflow:scroll;
 		margin: 0px;
 		padding: 0px;
@@ -28,31 +58,62 @@
 		background-color: #2a2a2a;
 	}
 	.dir, .file{
+		clear: both;
 		margin: 0px;
 		padding: 0px;
 		background-color: #3a3a3a;
-		height: 30px;
+		color: #dadada;
+		height: 32px;
 		width: 100%;
 	}
 	.file{
 		background-color: #4a4a4a;
 	}
+	#sourceEditor{
+		background-color: #2a2a2a;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 100%;
+	}
 	</style>
 </head>
-<body>
+<body onload="initCodeMirror();">
 	<div id="topbar"></div>
-	<div id="fileEditor">
-		<div id="container">
-			<div class="dir">
-				<img src="images/folder.png">
-				<p> Directory </p>
+	<div id="bodyContainer">
+		<div id="fileContainer">
+			<div class="dir" style="background-color: #4a4a4a;">
+				<img src="images/folder.png" class="fileIcon">
+				<p class="fileName"> Directory </p>
 			</div>
-			<div class="file">
-				<img src="images/file.png">
-				<p> File </p>
+			<div class="file" style="background-color: #3a3a3a;">
+				<img src="images/file.png" class="fileIcon">
+				<p class="fileName"> File </p>
+			</div>
+			<div class="file" style="background-color: #4a4a4a;">
+				<img src="images/file.png" class="fileIcon">
+				<p class="fileName"> File </p>
+			</div>
+			<div class="file" style="background-color: #3a3a3a;">
+				<img src="images/file.png" class="fileIcon">
+				<p class="fileName"> File </p>
+			</div>
+			<div class="file" style="background-color: #4a4a4a;">
+				<img src="images/file.png" class="fileIcon">
+				<p class="fileName"> File </p>
+			</div>
+			<div class="file" style="background-color: #3a3a3a;">
+				<img src="images/file.png" class="fileIcon">
+				<p class="fileName"> File </p>
+			</div>
+			<div class="file" style="background-color: #4a4a4a;">
+				<img src="images/file.png" class="fileIcon">
+				<p class="fileName"> File </p>
 			</div>
 		</div>
+		<div id="sourceEditor">
+			<textarea id="code"></textarea>
+		</div> 
 	</div>
-	<div id="sourceEditor"></div> 
 </body>
 </html>
