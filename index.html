@@ -1,42 +1,39 @@
 <html>
 <head>
+	<!-- -->
+	<title>JSEditor</title>
+
 	<!-- github: https://github.com/marijnh/CodeMirror -->
 	<link rel="stylesheet" href="js/CodeMirror-master/lib/codemirror.css">
 	<link rel="stylesheet" href="js/CodeMirror-master/theme/mbo.css">
-	
-	<link rel="stylesheet" href="js/jstree-master/dist/themes/default/style.css" />
-	<script src="js/jstree-master/dist/libs/jquery.js"></script>
-	<script src="js/jstree-master/dist/jstree.min.js"></script>
-
 
 	<script type="text/javascript" src="js/CodeMirror-master/lib/codemirror.js"></script>
 	<script type="text/javascript" src="js/CodeMirror-master/mode/javascript/javascript.js"></script>
 	<script type="text/javascript">	</script>
-	<!-- Directory List -->
-	<script type="text/javascript" src="js/script.js"></script> 
+	
 
-	<!-- -->
+	<!-- Directory List -->
+	<link rel="stylesheet" href="js/jstree-master/dist/themes/default/style.css" />
+	
+	<script src="js/jstree-master/dist/libs/jquery.js"></script>
+	<script src="js/jstree-master/dist/jstree.min.js"></script>
+
 	<!-- -->
 	<link rel="stylesheet" href="res/css/style.css">
-
+	<script type="text/javascript" src="js/script.js"></script> 	
 </head>
 <body onload="init();">
 	<div id="topbar"></div>
 	<div id="bodyContainer">
 		<div id="fileContainer">
-			<div id="container">
-				<ul>
-				    <li>Root node
-				      <ul>
-				        <li id="child_node">Child node</li>
-				      </ul>
-				    </li>
-				  </ul>
-				</div>
+			<div id="jstreeContainer">
+				<ul><li>jstree</li></ul>
 			</div>
+		</div>
 		<div id="sourceEditor">
-			<textarea id="code"></textarea>
+			<textarea id="code">codeMirror</textarea>
 		</div> 
 	</div>
+	<div id="bottomBar"></div>
 </body>
 </html>
