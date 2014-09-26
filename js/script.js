@@ -4,9 +4,18 @@ function xhrGet(reqUri, callback) {
 	xhr.onload = callback;
 	xhr.send();
 }
+function showHideTreeview(){
+	d = document.getElementById("fileContainer");
+	if(d.style["display"] == "block"){
+		d.style["display"] = "none";
+	}else{
+		d.style["display"] = "block";
+	}
+}
 function openCode(url){
 	if(!url) return;
 	xhrGet(url, function(){
+		console.log("opening file: " + url)
 		cm.doc.setValue(this.responseText);
 	})
 }
@@ -23,6 +32,7 @@ var init_jstreeContainer = function(){
 				});
 			}
 		} });
+	//EVENT:
 	$('#jstreeContainer')
 		.on('changed.jstree', function (e, data) {
 			for(var i = 0; i < treeData.length; i++){
@@ -41,6 +51,10 @@ var init_CodeMirror = function(){
 			lineNumbers: true,
 			mode: "javascript",
 			theme: "mbo"
+	});
+	// EVENT:
+	cm.on("change", function(sender, obj){
+		console.log(obj);
 	});
 }
 

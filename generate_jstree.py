@@ -10,8 +10,8 @@ itm = {
 
 class jstree():
 
-	def __init__(self, path = "./"):
-		self.root = os.path.abspath(path)
+	def __init__(self, serverRoot = "./"):
+		self.root = os.path.abspath(serverRoot)
 		self.items = []
 
 	def gen_path_parrent(self, path):
@@ -51,7 +51,7 @@ class jstree():
 
 
 
-	def generate_jstree(self, path = "./data"):
+	def generate_jstree(self, path = "./"):
 		if os.path.abspath(path) == self.root:
 			self.dataRoot = "/"
 		else:
@@ -65,7 +65,7 @@ class jstree():
 		return json.dumps(self.items);
 
 if __name__ == '__main__':
-	j = jstree().generate_jstree()
+	j = jstree(serverRoot="./").generate_jstree("./data")
 	#for itm in json.loads(j):
 	#	print(itm)
 	open("jstreedata.json", "w").write(j)

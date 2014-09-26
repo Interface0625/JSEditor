@@ -20,20 +20,43 @@
 
 	<!-- -->
 	<link rel="stylesheet" href="res/css/style.css">
-	<script type="text/javascript" src="js/script.js"></script> 	
+	<script type="text/javascript" src="js/script.js"></script> 
+	<script type="text/javascript">
+
+	</script>	
 </head>
 <body onload="init();">
+
+<div id="wrapper">
 	<div id="topbar"></div>
 	<div id="bodyContainer">
 		<div id="fileContainer">
+		<!--
+			<div id="fileControls">
+				<a href="#">
+				<img src="res/images/new-file.png" class="fc_icon">
+				</a>
+				<a href="#">
+				<img src="res/images/new-folder.png" class="fc_icon">
+				</a>
+				<a href="#"><img src="res/images/delete.png" class="fc_icon_right"></a>
+				<a href="#">
+				<img src="res/images/rename.png" class="fc_icon_right"></a>
+			</div>
+		-->
 			<div id="jstreeContainer">
 				<ul><li>jstree</li></ul>
 			</div>
+		</div>
+		<div id="showHideTreeView" 
+		onclick="showHideTreeview();">
+
 		</div>
 		<div id="sourceEditor">
 			<textarea id="code">codeMirror</textarea>
 		</div> 
 	</div>
 	<div id="bottomBar"></div>
+</div>
 </body>
 </html>
