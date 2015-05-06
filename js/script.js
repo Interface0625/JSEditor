@@ -27,7 +27,7 @@ var init_jstreeContainer = function(){
 			"data" : function(o, cb){
 				var self = this;
 					xhrGet("jstreedata.json", function(){
-						treeData = JSON.parse(this.responseText)
+						treeDatad = JSON.parse(this.responseText)
 						cb.call(self, treeData);
 				});
 			}
@@ -45,6 +45,7 @@ var init_jstreeContainer = function(){
 		})
 	});
 }
+var cm;
 var init_CodeMirror = function(){
 	cm = CodeMirror.fromTextArea(
 		document.getElementById("code"), {
@@ -56,9 +57,21 @@ var init_CodeMirror = function(){
 	cm.on("change", function(sender, obj){
 		console.log(obj);
 	});
-}
+};
+
+var reciever;
+var init_recieverCode = function(){
+    reciever = CodeMirror.fromTextArea(
+        document.getElementById("code1"), {
+            lineNumbers: true,
+            mode: "javascript",
+            theme: "mbo"
+        });
+
+};
 
 var init = function(){
 	init_jstreeContainer();
 	init_CodeMirror();
+    init_recieverCode();
 }

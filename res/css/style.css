@@ -79,7 +79,12 @@ body{
 
 /* Bottom */
 #bottomBar{
-	height: 0%;
-	width: 100%;
-	background-color: #272822;	
+    top: 300px;
+    right: 10px;
+	/*height: ;*/
+	width: 200px;
+    position: absolute;
+    z-index: 2147483647;
+    color:white;
+	background-color: #000000;
 }

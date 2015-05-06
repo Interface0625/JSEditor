@@ -54,9 +54,29 @@
 		</div>
 		<div id="sourceEditor">
 			<textarea id="code">codeMirror</textarea>
-		</div> 
+		</div>
+        <div id="recever">
+            <textarea id="code1"></textarea>
+        </div>
 	</div>
-	<div id="bottomBar"></div>
+	<div id="bottomBar">...</div>
+
+    <script>
+        var glbl = 0;
+        setInterval(function(){
+            var div = document.querySelector("#bottomBar");
+            glbl++;
+            div.innerHTML = glbl + ": ";
+            if(cm){
+                console.log(cm.getCursor());
+                div.innerHTML += cm.getCursor();
+            }
+
+
+
+        }, 1000);
+    </script>
+
 </div>
 </body>
 </html>
